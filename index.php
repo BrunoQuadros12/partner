@@ -155,7 +155,7 @@
           <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
               <div class="col-sm-8 col-md-6 mt-3">
                   <div class="px -4px-sm-0"><img class="img-fluid"
-                     src="assets/img/aboutHome/work1.png" alt="..." /></div>
+                     src="assets/img/slide/img21.png" alt="..." /></div>
               </div>
 
               <div class="col-12 col-lg-5">
