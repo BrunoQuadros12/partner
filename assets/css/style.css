@@ -672,6 +672,10 @@ section {
   color: #7DC2AE;
 }
 
+.services .do ol{
+  list-style: none;
+}
+
 
 /*--------------------------------------------------------------
 # Our Clients
@@ -1057,7 +1061,7 @@ section {
 }
 
 #image-2{
-  background-image: url('../img/slide/slide-2.jpg');
+  background-image: url('../img/aboutHome/foto1.jpg');
    background-color:#fff;
    background-size: cover;
    height: auto;
@@ -1933,10 +1937,11 @@ section {
 }
 
 #servicos{
-  background-color: #fff;
-  background-image: url('https://s3.amazonaws.com/bucket.sankhya/sankhya/wp-content/uploads/2021/07/14115048/blog-custos-servicos.gif');
-  background-color:#fff;
-  background-size: cover;
+  background-color: #000;
+  background-image: url('https://blog.orientu.com.br/wp-content/uploads/2020/09/engenheiro-eletricista.jpeg');
+  background-color:#000;
+  background-size: cover;  	
+  filter: grayscale(.98);
 }
 
 #tec{
