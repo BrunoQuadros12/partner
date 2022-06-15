@@ -176,7 +176,7 @@
           <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">       
               <div class="col-12 m-5">
                   <h2 class="display-4 lh-1 mb-4 text-center py-5" style="color:#fff" >Engenharia Elétrica</h2>
-                  <p class="lead fw-normal mb-5 mb-lg-0 text-center px-5" style="color:#fff" >
+                  <p class="lead fw-normal mb-5 mb-lg-0 text-center px-5" style="color:#fff;text-shadow: 0.1em 0.1em #333" >
                     Com bases instaladas nos estados do Rio de Janeiro, Pernambuco e Goiás, o GRUPO
                     PARTNERSHIP atua com a prestação de serviços de operações técnicas e comerciais.</p>
                     <p class="mt-2 text-center">
