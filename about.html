@@ -25,7 +25,7 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="./assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -37,7 +37,7 @@
     <div class="container d-flex justify-content-between align-items-center">
 
       <div class="logo">
-        <h1><a href="index.html">Partnership</a></h1>
+        <h1><a href="index.php">Partnership</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -46,7 +46,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a  href="index.html">Home</a></li>
+          <li><a  href="index.php">Home</a></li>
           <li><a class="active" href="about.html">Quem somos</a></li>
           <li><a href="services.html">Serviços</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
@@ -75,7 +75,7 @@
 
 
     <!-- ======= Missao / visao/ valores  Section ======= -->
-    <section id="pricing" class="pricing p-5 bg-light" style="margin-top: -40px;">
+    <section id="" class="pricing p-5 bg-light" style="margin-top: -40px;">
       <div class="container">
 
         
@@ -88,9 +88,9 @@
           </p>
         </div>
 
-        <div class="row no-gutters">
+        <div class="row no-gutters" id="app">
 
-          <div class="col-lg-4 box">
+          <div class="col-lg-4 box" style="cursor:pointer" :class="{featured:missaoContainer}" @mousemove="missao(true)">
             <h3>Missão</h3>
             <span class="weAre">O GRUPO PARTNERSHIP está comprometido em conectar pessoas e empresas aos resultados
               desejados com responsabilidade social, ambiental e priorizando a vida com o início e término
@@ -98,7 +98,7 @@
             <span>
           </div>
 
-          <div class="col-lg-4 box featured">
+          <div class="col-lg-4 box" style="cursor:pointer" :class="{featured:propositoContainer}" @mousemove="proposito(true)">
             <h3>Propósito</h3>
             <span class="weAre">Ser uma empresa reconhecida por proporcionar resultados positivos em pessoas e empresas
               através da TRANSFORMAÇÃO DIGITAL em todas as regiões do Brasil até e tornar-se NET ZERO
@@ -106,7 +106,7 @@
             <span>
           </div>
 
-          <div class="col-lg-4 box">
+          <div class="col-lg-4 box" style="cursor:pointer" :class="{featured:valoresContainer}" @mousemove="valores(true)">
             <h3>Valores</h3>
             <span class="weAre">Governalismo </span>
             <br><span class="weAre">Transbordo </span> 
@@ -451,6 +451,8 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -462,6 +464,44 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        missaoContainer:false,
+        propositoContainer:false,
+        valoresContainer:false
+      },
+      methods:{
+        missao(r){
+         this.missaoContainer = r
+
+         setTimeout(()=>{
+            this.missaoContainer = false
+         },1000)
+        },
+
+        proposito(r){
+         this.propositoContainer = r
+
+         setTimeout(()=>{
+            this.propositoContainer = false
+         },1000)
+        },
+
+        valores(r){
+         this.valoresContainer = r
+
+         setTimeout(()=>{
+            this.valoresContainer = false
+         },1000)
+        }
+
+      }
+
+    })
+  </script>
 
 </body>
 

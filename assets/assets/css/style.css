@@ -712,10 +712,8 @@ section {
   width: 100%;
 }
 .counts .count-box i {
-  /*display: block;*/
   font-size: 30px;
   color: #7DC2AE;
-  /*float: left;*/
   line-height: 0;
 }
 .counts .count-box span {
@@ -723,7 +721,7 @@ section {
   line-height: 24px;
   display: block;
   font-weight: 700;
-  color: #545454;
+
   margin-left: 50px;
 }
 .counts .count-box p {
@@ -1074,6 +1072,8 @@ section {
   background: #fff;
   text-align: center;
 }
+
+
 .pricing h3 {
   font-weight: 300;
   margin-bottom: 15px;
@@ -1110,6 +1110,8 @@ section {
 .pricing ul .na {
   color: #ccc;
 }
+
+
 .pricing ul .na i {
   color: #ccc;
 }
@@ -1223,10 +1225,11 @@ section {
   padding: 8px;
   border: 2px dotted #fef5f4;
 }
+
 .contact .info-box h3 {
   font-size: 20px;
   color: #777777;
-  font-weight: 700;
+  font-weight: 300;
   margin: 10px 0;
 }
 .contact .info-box p {

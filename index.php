@@ -31,6 +31,11 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
 
 <body style="overflow-x: hidden;">
@@ -63,6 +68,8 @@
     </div>
   </header><!-- End Header -->
 
+
+
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container">
@@ -73,10 +80,10 @@
         <div class="carousel-inner" role="listbox">
 
           <!-- Slide 1 -->
-          <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)">
+          <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-01.jpg)">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Bem-vindo ao <span>Grupo Partnership</span> <img src="assets/img/favicon.png"></h2>
+                <h2 class="animate__animated animate__fadeInDown">Bem-vindo ao Grupo Partnership <img src="assets/img/favicon.png"></h2>
                 <p class="animate__animated animate__fadeInUp"> Nosso propósito é <strong>agregar valores</strong> a pessoas e
                  empresas conectando projetos 
                 </p>
@@ -119,6 +126,8 @@
     </div>
   </section><!-- End Hero -->
 
+ 
+
   <main id="main">
 
     <!-- ======= Featured Section ======= -->
@@ -149,6 +158,9 @@
 
       </div>
     </section><!-- End Featured Section -->
+
+   
+    
 
     <section class="mx-8" id="qmSomos">
       <div class="container px-5">
@@ -270,9 +282,37 @@
     </section><!-- End Clients Section -->
 
   </main><!-- End #main -->
+  
+  <template id="app" v-if="cookies">
+    <footer id="footer" style="position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;z-index:999" class="animate__animated animate__backInUp">
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h4>Nós nos importamos com sua <strong>privacidade</strong></h4>
+            <p>Nós e nossos parceiros utilizamos cookies para armazenar e acessar informações pessoas, como dados de navegação
+              , com o próposito de servir e personalizar conteúdos e anúncios, e analisar o tráfego do site.
+            </p>
+            <p>
+              <button class="btn btn-outline-light" @click="acceptCookies">Aceitar cookies</button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  </template>
+  
+ 
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
+
+    
+  
 
     <div class="footer-top">
       <div class="container">
@@ -331,7 +371,11 @@
     </div>
   </footer><!-- End Footer -->
 
+  
+
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -344,6 +388,22 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        cookies:true
+      },
+      methods:{
+
+        acceptCookies(){
+          this.cookies = false
+        }
+
+      }
+    })
+  </script>
   
 
 </body>

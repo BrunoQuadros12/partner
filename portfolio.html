@@ -75,17 +75,24 @@
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
-      <div class="container">
+      <div class="container" id="app">
 
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">Completo</li>
-              <li data-filter=".filter-app">Trabalhos realizados</li>
-              <li data-filter=".filter-card">Equipe</li>
-              <li data-filter=".filter-web">Dia a dia</li>
+              <li data-filter="*" class="filter-active" @click="choiceOption('all')">Completo</li>
+              <li data-filter=".filter-app" @click="choiceOption('work')">Trabalhos realizados</li>
+              <li data-filter=".filter-card" @click="choiceOption('team')">Equipe</li>
+              <li data-filter=".filter-web" @click="choiceOption('day')">Dia a dia</li>
             </ul>
           </div>
+        </div>
+
+        <div class="row filter-app" >
+          <p v-if="message == 'all'" class="text-center">Abaixo o álbum completo sobre nossa empresa, nossos trabalhos realizados, equipe e nosso dia a dia.</p>
+          <p v-else-if="message == 'work'" class="text-center">Acompanhe um pouco dos nossos trabalhos realizados.</p>
+          <p v-else-if="message == 'team'" class="text-center">Estamos sempre juntos e unidos para dar o nosso melhor. </p>
+          <p v-else class="text-center">Nosso dia a dia, sempre em busca do melhor.</p>
         </div>
 
         <div class="row portfolio-container">
@@ -94,7 +101,7 @@
             <div class="portfolio-wrap">
               <img src="assets/img/aboutHome/foto13.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Trabalhos realizados</h4>
+                <h4>Trabalhos realizados </h4>
                 <p>Placas solares instaladas</p>
                 <div class="portfolio-links">
                   <a href="assets/img/aboutHome/foto13.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Trabalhos realizados"><i class="bx bx-plus"></i></a>
@@ -118,16 +125,17 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="assets/img/aboutHome/foto15.jpg" class="img-fluid" alt="">
+              <img src="assets/img/aboutHome/foto12.jpg" class="img-fluid" alt="" style="height:236px;width: 100%;">
               <div class="portfolio-info">
                 <h4>Trabalhos realizados</h4>
                 <p>Placas solares instaladas</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/aboutHome/foto15.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Trabalhos realizados"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/aboutHome/foto12.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Trabalhos realizados"><i class="bx bx-plus"></i></a>
                 </div>
               </div>
             </div>
           </div>
+          
 
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
@@ -138,6 +146,19 @@
                 <p>Parceria com a Enel</p>
                 <div class="portfolio-links">
                   <a href="assets/img/aboutHome/foto2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Dia a dia"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/aboutHome/foto5.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Dia a dia</h4>
+                <p>Parceria com a Insole</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/aboutHome/foto5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Dia a dia"><i class="bx bx-plus"></i></a>
                 </div>
               </div>
             </div>
@@ -156,18 +177,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/aboutHome/foto5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Dia a dia</h4>
-                <p>Parceria com a Insole</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/aboutHome/foto5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Dia a dia"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
+          
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
@@ -197,7 +207,7 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="assets/img/aboutHome/foto8.jpg" class="img-fluid" alt="">
+              <img src="assets/img/aboutHome/foto8.jpg" class="img-fluid" alt="" style="height:310px">
               <div class="portfolio-info">
                 <h4>Equipe</h4>
                 <p>Buscando sempre crescer</p>
@@ -276,8 +286,35 @@
     </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        message:'all'
+      },
+      methods:{
+        choiceOption(type){
+
+          if(type === 'all'){
+            this.message = type
+          }else if(type === 'work'){
+            this.message = type
+          }else if(type === 'team'){
+            this.message = type
+          }else{
+            this.message = type
+          }
+
+        }
+      }
+    })
+  </script>
 
   <!-- Vendor JS Files -->
+
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
